@@ -3,8 +3,32 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CQRS", "CQRS", "{25B0F9B4-701B-4BBD-BF57-72BF7D171B76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRSDemoApp", "CQRSDemoApp\CQRSDemoApp.csproj", "{5670680E-516C-4937-97EF-ED0CB3D4C63B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRSDemoAppTests", "CQRSDemoAppTests\CQRSDemoAppTests.csproj", "{E2C3F453-C3DF-46F2-AF1B-01E1348E5B8D}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5670680E-516C-4937-97EF-ED0CB3D4C63B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5670680E-516C-4937-97EF-ED0CB3D4C63B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5670680E-516C-4937-97EF-ED0CB3D4C63B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5670680E-516C-4937-97EF-ED0CB3D4C63B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2C3F453-C3DF-46F2-AF1B-01E1348E5B8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2C3F453-C3DF-46F2-AF1B-01E1348E5B8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2C3F453-C3DF-46F2-AF1B-01E1348E5B8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2C3F453-C3DF-46F2-AF1B-01E1348E5B8D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5670680E-516C-4937-97EF-ED0CB3D4C63B} = {25B0F9B4-701B-4BBD-BF57-72BF7D171B76}
+		{E2C3F453-C3DF-46F2-AF1B-01E1348E5B8D} = {25B0F9B4-701B-4BBD-BF57-72BF7D171B76}
 	EndGlobalSection
 EndGlobal
