@@ -5,9 +5,9 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CQRS", "CQRS", "{25B0F9B4-701B-4BBD-BF57-72BF7D171B76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRSDemoApp", "CQRSDemoApp\CQRSDemoApp.csproj", "{5670680E-516C-4937-97EF-ED0CB3D4C63B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRSDemoApp", "CQRS\CQRSDemoApp\CQRSDemoApp.csproj", "{5670680E-516C-4937-97EF-ED0CB3D4C63B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRSDemoAppTests", "CQRSDemoAppTests\CQRSDemoAppTests.csproj", "{E2C3F453-C3DF-46F2-AF1B-01E1348E5B8D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CQRSDemoAppTests", "CQRS\CQRSDemoAppTests\CQRSDemoAppTests.csproj", "{E2C3F453-C3DF-46F2-AF1B-01E1348E5B8D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
