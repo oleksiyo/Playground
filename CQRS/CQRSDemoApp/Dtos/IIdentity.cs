@@ -4,6 +4,6 @@ namespace CQRSDemoApp.Dtos
 {
     public interface IIdentity
     {
-        Guid Id { get; }
+        Guid Id { get; set; }
     }
 }

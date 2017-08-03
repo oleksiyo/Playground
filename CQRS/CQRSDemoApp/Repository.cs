@@ -22,7 +22,7 @@ namespace CQRSDemoApp
         }
     }
 
-    public interface IRepository<T> where T: IIdentity
+    public interface IRepository<T>// where T: IIdentity
     {
         List<T> GetAll();
         T GetById(Guid id);

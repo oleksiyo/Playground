@@ -4,6 +4,7 @@ namespace CQRSDemoApp.Dtos
 {
     public class Inventory: IIdentity
     {
-        public Guid Id { get; }
+        public Guid Id { get; set; }
+        public string Name { get; set; }
     }
 }
