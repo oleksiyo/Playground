@@ -78,6 +78,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Main.cs" />
     <Compile Include="MemoryRepositoryTests.cs" />
     <Compile Include="NSubDataAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

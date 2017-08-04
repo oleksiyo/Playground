@@ -3,7 +3,9 @@ using CQRSDemoApp.Dtos;
 
 namespace CQRSDemoApp.Command.InventoryCommands
 {
-    public class InventoryCommandHandler : ICommandHandler<CreateInventory>, ICommandHandler<DeleteInventory>
+    public class InventoryCommandHandler : 
+        ICommandHandler<CreateInventory>,
+        ICommandHandler<DeleteInventory>
     {
         private readonly IRepository<Inventory> repository;
 
