@@ -15,7 +15,8 @@ namespace CQRSDemoApp.Query.InventoryQuery
         public Inventory[] Execute(FindInventoryByNameQuery query)
         {
             var users = repository.GetAll();
-            return users.Where(user => user.Name.Contains(query.SearchName)).ToArray();
+            return users
+                .Where(user => user.Name.Contains(query.SearchName)).ToArray();
         }
     }
 }
