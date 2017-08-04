@@ -55,4 +55,37 @@ namespace CQRSDemoApp
         IEnumerable<object> GetServices(Type serviceType);
         T Resolve<T>() where T : class;
     }
+
+    public class Resolver
+    {
+        public static Container Bootstrap()
+        {
+            var container = new Container();
+
+            Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            //   container.Register(typeof(ICommandHandler<CreateInventory>), assemblies);
+            //    container.Register<ICommandHandler<CreateInventory>, InventoryCommandHandler>();
+            //      container.Register(typeof(ICommandHandler<>), assemblies);
+
+              container.Register(typeof(ICommandHandler<>), new[] { typeof(ICommandHandler<>).Assembly });
+            // container.Register(typeof(IQueryHandler<,>), assemblies);
+          //  container.Register(typeof(IRepository<>), new[] {typeof(IRepository<>).Assembly});
+            container.Register(typeof(IRepository<>), typeof(MemoryRepository<>));
+            container.Register(typeof(IQueryHandler<,>), new[] { typeof(IQueryHandler<,>).Assembly });
+            container.Register<ICommandDispatcher, CommandDispatcher>();
+            // var t = new[] { typeof(IRepository<>).Assembly };
+            //  container.Register<IRepository<Inventory>, MemoryRepository<Inventory>>();
+            //   container.Register(typeof(IRepository<>), new[] { typeof(IRepository<>).Assembly });
+
+            //  container.Register(typeof(IRepository<>), assemblies);
+            // MemoryRepository
+            // container.Register<IRepository<>, MemoryRepository<>>(Lifestyle.Singleton);
+            //    container.Register(typeof(IRepository<>), typeof(MemoryRepository<>));
+            // container.Register(typeof(ICommandHandler<>), AppDomain.CurrentDomain.GetAssemblies());
+            // container.Register(typeof(IQueryHandler<,>), AppDomain.CurrentDomain.GetAssemblies());
+
+            container.Verify();
+            return container;
+        }
+    }
 }

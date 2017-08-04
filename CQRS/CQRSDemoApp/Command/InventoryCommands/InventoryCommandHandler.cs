@@ -16,7 +16,8 @@ namespace CQRSDemoApp.Command.InventoryCommands
 
         public void Execute(CreateInventory command)
         {
-            throw new NotImplementedException();
+            var item = new Inventory {Id = command.Id,  Name = command.Name};
+            repository.Add(item);
         }
 
         public void Execute(DeleteInventory command)
