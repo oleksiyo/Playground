@@ -4,6 +4,8 @@ using CQRSDemoApp;
 using CQRSDemoApp.Command;
 using CQRSDemoApp.Command.InventoryCommands;
 using CQRSDemoApp.Dtos;
+using CQRSDemoApp.Query;
+using CQRSDemoApp.Query.InventoryQuery;
 using FluentAssertions;
 using SimpleInjector;
 using Xunit;
@@ -31,6 +33,25 @@ namespace CQRSDemoAppTests
             var repository = new MemoryRepository<Inventory>();
             var inv = repository.GetAll();
             inv.First().ShouldBeEquivalentTo(new Inventory {Id = command.Id, Name = command.Name});
+        }
+
+
+        [Fact]
+        public void should_pass_full_life_cycle()
+        {
+            // Command
+            ICommandDispatcher dispatcher = resolver.GetInstance<ICommandDispatcher>();
+            var command = new CreateInventory(Guid.NewGuid(), "new inv");
+
+            // Act
+            dispatcher.Execute(command);
+
+            // Query
+            IQueryDispatcher queryDispatcher = resolver.GetInstance<IQueryDispatcher>();
+            IQuery<Inventory[]> findInventoryByNameQuery = new FindInventoryByNameQuery("new");
+            Inventory[] invs= queryDispatcher.Execute(findInventoryByNameQuery);
+
+            invs.First().ShouldBeEquivalentTo(new Inventory {Id = command.Id, Name = command.Name});
         }
     }
 }
