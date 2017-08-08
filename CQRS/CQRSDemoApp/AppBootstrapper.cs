@@ -72,6 +72,7 @@ namespace CQRSDemoApp
           //  container.Register(typeof(IRepository<>), new[] {typeof(IRepository<>).Assembly});
             container.Register(typeof(IRepository<>), typeof(MemoryRepository<>));
             container.Register(typeof(IQueryHandler<,>), new[] { typeof(IQueryHandler<,>).Assembly });
+            container.Register<IQueryDispatcher, QueryDispatcher>();
             container.Register<ICommandDispatcher, CommandDispatcher>();
             // var t = new[] { typeof(IRepository<>).Assembly };
             //  container.Register<IRepository<Inventory>, MemoryRepository<Inventory>>();

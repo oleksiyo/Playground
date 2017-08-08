@@ -48,8 +48,10 @@ namespace CQRSDemoAppTests
 
             // Query
             IQueryDispatcher queryDispatcher = resolver.GetInstance<IQueryDispatcher>();
-            IQuery<Inventory[]> findInventoryByNameQuery = new FindInventoryByNameQuery("new");
-            Inventory[] invs= queryDispatcher.Execute(findInventoryByNameQuery);
+
+            var findInventoryByNameQuery = new FindInventoryByNameQuery("new");
+          //  var invs= queryDispatcher.Execute(findInventoryByNameQuery); // 
+            Inventory[] invs= queryDispatcher.Execute<FindInventoryByNameQuery, Inventory[]>(findInventoryByNameQuery);
 
             invs.First().ShouldBeEquivalentTo(new Inventory {Id = command.Id, Name = command.Name});
         }
